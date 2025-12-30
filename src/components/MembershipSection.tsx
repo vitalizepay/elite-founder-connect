@@ -1,4 +1,6 @@
 import { BookOpen, Coffee, Mic2, Eye, Crown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import AnimatedSection from './AnimatedSection';
 
 const MembershipSection = () => {
   const benefits = [
@@ -39,7 +41,7 @@ const MembershipSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
               What You Get
             </span>
@@ -50,18 +52,26 @@ const MembershipSection = () => {
               Membership at IBC is designed to deliver continuous value throughout the year. 
               Members benefit from learning, networking, visibility, and access to opportunities.
             </p>
-          </div>
+          </AnimatedSection>
 
           {/* Benefits */}
           <div className="space-y-8">
             {benefits.map((benefit, index) => (
-              <div
+              <motion.div
                 key={benefit.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={`flex flex-col lg:flex-row gap-6 lg:gap-12 items-start ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
               >
-                <div className="flex-shrink-0 lg:w-1/3">
+                <motion.div 
+                  className="flex-shrink-0 lg:w-1/3"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <div className="bg-card p-6 rounded-2xl border border-border shadow-premium">
                     <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                       <benefit.icon className="w-7 h-7 text-primary" />
@@ -70,7 +80,7 @@ const MembershipSection = () => {
                       {benefit.highlight}
                     </span>
                   </div>
-                </div>
+                </motion.div>
                 <div className="lg:w-2/3 flex flex-col justify-center">
                   <h3 className="font-display text-2xl font-bold text-foreground mb-3">
                     {benefit.title}
@@ -79,7 +89,7 @@ const MembershipSection = () => {
                     {benefit.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
