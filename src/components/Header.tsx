@@ -40,11 +40,9 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <span className="font-display text-3xl font-semibold tracking-wide text-primary transition-colors group-hover:text-emerald-light">
-            IBC
-          </span>
-          <span className="hidden sm:inline font-display text-base font-normal text-muted-foreground tracking-wide">
+        <a href="#" className="flex items-center gap-2">
+          <span className="font-display text-2xl font-bold text-primary">IBC</span>
+          <span className="hidden sm:inline text-sm text-muted-foreground font-sans">
             Indian Business Circle
           </span>
         </a>

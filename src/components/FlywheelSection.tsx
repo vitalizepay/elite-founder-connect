@@ -1,7 +1,4 @@
-import { motion } from 'framer-motion';
 import flywheel from '@/assets/flywheel.png';
-import AnimatedSection from './AnimatedSection';
-import AnimatedCard from './AnimatedCard';
 
 const FlywheelSection = () => {
   const steps = [
@@ -42,7 +39,7 @@ const FlywheelSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <AnimatedSection className="text-center mb-16">
+          <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 bg-gold/20 text-gold-dark text-sm font-medium rounded-full mb-4">
               How It Works
             </span>
@@ -53,28 +50,25 @@ const FlywheelSection = () => {
               Each element reinforces the next, creating a compounding effect 
               that continuously amplifies trust, learning, and opportunities.
             </p>
-          </AnimatedSection>
+          </div>
 
           {/* Flywheel Image */}
-          <AnimatedSection className="flex justify-center mb-16" delay={0.2}>
+          <div className="flex justify-center mb-16">
             <div className="relative max-w-xl">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl" />
-              <motion.img
+              <img
                 src={flywheel}
                 alt="IBC Value Flywheel - Curated Members, Learning, Connections, Stories, Community, Opportunities"
                 className="relative w-full h-auto rounded-lg"
-                whileHover={{ scale: 1.02, rotate: 2 }}
-                transition={{ type: "spring", stiffness: 200 }}
               />
             </div>
-          </AnimatedSection>
+          </div>
 
           {/* Steps Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {steps.map((step, index) => (
-              <AnimatedCard
+              <div
                 key={step.number}
-                index={index}
                 className="relative group"
               >
                 <div className="absolute -top-2 -left-2 text-6xl font-display font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
@@ -88,16 +82,16 @@ const FlywheelSection = () => {
                     {step.description}
                   </p>
                 </div>
-              </AnimatedCard>
+              </div>
             ))}
           </div>
 
           {/* Bottom CTA */}
-          <AnimatedSection className="mt-16 text-center" delay={0.4}>
+          <div className="mt-16 text-center">
             <p className="font-display text-xl text-foreground italic">
               "Curated members → Learning → Connections → Visibility → Stronger community → More opportunities"
             </p>
-          </AnimatedSection>
+          </div>
         </div>
       </div>
     </section>

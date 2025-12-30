@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -8,7 +7,6 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ChevronRight, ChevronLeft, Check, Send } from 'lucide-react';
 import { toast } from 'sonner';
-import AnimatedSection from './AnimatedSection';
 
 const ApplicationForm = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -106,7 +104,7 @@ const ApplicationForm = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           {/* Section Header */}
-          <AnimatedSection className="text-center mb-12">
+          <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 bg-gold/20 text-gold-dark text-sm font-medium rounded-full mb-4">
               Join the Circle
             </span>
@@ -117,7 +115,7 @@ const ApplicationForm = () => {
               Membership is curated to preserve the integrity of the community. 
               All applications are reviewed before confirmation.
             </p>
-          </AnimatedSection>
+          </div>
 
           {/* Progress Steps */}
           <div className="flex items-center justify-between mb-8 overflow-x-auto pb-4">

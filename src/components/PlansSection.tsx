@@ -1,7 +1,5 @@
 import { Check, X, Crown, Star } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import AnimatedSection from './AnimatedSection';
 
 const PlansSection = () => {
   const scrollToApply = () => {
@@ -69,7 +67,7 @@ const PlansSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <AnimatedSection className="text-center mb-16">
+          <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 bg-gold/20 text-gold-dark text-sm font-medium rounded-full mb-4">
               Choose Your Path
             </span>
@@ -79,18 +77,13 @@ const PlansSection = () => {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Membership is curated to maintain quality and relevance. All applications are reviewed before confirmation.
             </p>
-          </AnimatedSection>
+          </div>
 
           {/* Plans Grid */}
           <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {plans.map((plan, index) => (
-              <motion.div
+            {plans.map((plan) => (
+              <div
                 key={plan.name}
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                whileHover={{ y: -8 }}
                 className={`relative rounded-2xl p-8 ${
                   plan.featured
                     ? 'bg-primary text-primary-foreground shadow-emerald'
@@ -99,18 +92,12 @@ const PlansSection = () => {
               >
                 {/* Featured Badge */}
                 {plan.badge && (
-                  <motion.div 
-                    className="absolute -top-3 left-8"
-                    initial={{ opacity: 0, y: -10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                  >
+                  <div className="absolute -top-3 left-8">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gold text-foreground text-xs font-bold rounded-full shadow-gold">
                       <Crown className="w-3 h-3" />
                       {plan.badge}
                     </span>
-                  </motion.div>
+                  </div>
                 )}
 
                 {/* Plan Header */}
@@ -132,15 +119,8 @@ const PlansSection = () => {
 
                 {/* Features */}
                 <div className="space-y-3 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <motion.div 
-                      key={featureIndex} 
-                      className="flex items-start gap-3"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 + featureIndex * 0.03 }}
-                    >
+                  {plan.features.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
                       {feature.included ? (
                         <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
                           plan.featured ? 'bg-primary-foreground/20' : 'bg-primary/10'
@@ -159,7 +139,7 @@ const PlansSection = () => {
                       }`}>
                         {feature.text}
                       </span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
 
@@ -172,16 +152,14 @@ const PlansSection = () => {
                 >
                   Apply for {plan.name}
                 </Button>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Note */}
-          <AnimatedSection className="text-center mt-8" delay={0.4}>
-            <p className="text-muted-foreground text-sm">
-              * Founding Membership is limited. All memberships are subject to application approval.
-            </p>
-          </AnimatedSection>
+          <p className="text-center text-muted-foreground text-sm mt-8">
+            * Founding Membership is limited. All memberships are subject to application approval.
+          </p>
         </div>
       </div>
     </section>
