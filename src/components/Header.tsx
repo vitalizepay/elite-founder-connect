@@ -46,7 +46,7 @@ const Header = () => {
             <span className="text-xs sm:text-sm text-muted-foreground font-sans leading-tight">
               Indian Business Circle
             </span>
-            <span className="text-[10px] sm:text-xs text-muted-foreground/70 font-sans mt-0.5">
+            <span className="text-[10px] sm:text-xs text-muted-foreground/70 font-sans mt-3">
               Dubai
             </span>
           </div>
