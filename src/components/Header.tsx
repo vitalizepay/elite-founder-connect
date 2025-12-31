@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import ibcLogo from '@/assets/ibc-logo.jpg';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,11 +41,12 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <span className="font-display text-2xl md:text-3xl font-bold text-primary">IBC</span>
-          <span className="text-xs sm:text-sm text-muted-foreground font-sans">
-            Indian Business Circle
-          </span>
+        <a href="#" className="flex items-center">
+          <img 
+            src={ibcLogo} 
+            alt="IBC Indian Business Circle Dubai" 
+            className="h-10 md:h-12 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Navigation */}
