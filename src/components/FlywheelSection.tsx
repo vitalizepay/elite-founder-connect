@@ -65,23 +65,18 @@ const FlywheelSection = () => {
           </div>
 
           {/* Steps Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {steps.map((step) => (
               <div
                 key={step.number}
-                className="relative group"
+                className="bg-background p-6 rounded-xl border border-border hover:border-primary/30 hover:shadow-premium transition-all duration-300"
               >
-                <div className="absolute -top-2 -left-2 text-6xl font-display font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
-                  {step.number}
-                </div>
-                <div className="relative bg-background p-6 rounded-xl border border-border hover:border-primary/30 hover:shadow-premium transition-all duration-300 ml-4 mt-4">
-                  <h4 className="font-display text-xl font-semibold text-foreground mb-3">
-                    {step.title}
-                  </h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
+                <h4 className="font-display text-lg font-semibold text-foreground mb-3">
+                  {step.title}
+                </h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
