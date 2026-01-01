@@ -41,11 +41,11 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center shrink-0">
           <img 
             src={ibcLogo} 
             alt="IBC Indian Business Circle Dubai" 
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-14 sm:h-16 md:h-20 w-auto object-contain"
           />
         </a>
 
