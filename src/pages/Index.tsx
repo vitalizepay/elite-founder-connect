@@ -5,7 +5,7 @@ import FlywheelSection from '@/components/FlywheelSection';
 import MembershipSection from '@/components/MembershipSection';
 import PlansSection from '@/components/PlansSection';
 import WhoItsForSection from '@/components/WhoItsForSection';
-import MembershipApplicationForm from '@/components/MembershipApplicationForm';
+import PublicInquiryForm from '@/components/PublicInquiryForm';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import StickyApplyButton from '@/components/StickyApplyButton';
@@ -21,7 +21,7 @@ const Index = () => {
         <MembershipSection />
         <PlansSection />
         <WhoItsForSection />
-        <MembershipApplicationForm />
+        <PublicInquiryForm />
         <ContactSection />
       </main>
       <Footer />
