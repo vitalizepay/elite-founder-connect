@@ -98,6 +98,75 @@ export type Database = {
         }
         Relationships: []
       }
+      membership_inquiries: {
+        Row: {
+          business_description: string
+          business_stage: string
+          company_name: string
+          contribution_to_community: string
+          created_at: string
+          declaration_confirmed: boolean
+          email: string
+          expected_gain: string
+          full_name: string
+          ibc_stories_interest: string | null
+          id: string
+          industry: string
+          membership_type: string
+          mobile_number: string
+          participate_in_events: boolean
+          reason_to_join: string
+          role_designation: string
+          understands_curation: boolean
+          website_or_linkedin: string | null
+          years_in_business: number
+        }
+        Insert: {
+          business_description: string
+          business_stage: string
+          company_name: string
+          contribution_to_community: string
+          created_at?: string
+          declaration_confirmed?: boolean
+          email: string
+          expected_gain: string
+          full_name: string
+          ibc_stories_interest?: string | null
+          id?: string
+          industry: string
+          membership_type: string
+          mobile_number: string
+          participate_in_events?: boolean
+          reason_to_join: string
+          role_designation: string
+          understands_curation?: boolean
+          website_or_linkedin?: string | null
+          years_in_business: number
+        }
+        Update: {
+          business_description?: string
+          business_stage?: string
+          company_name?: string
+          contribution_to_community?: string
+          created_at?: string
+          declaration_confirmed?: boolean
+          email?: string
+          expected_gain?: string
+          full_name?: string
+          ibc_stories_interest?: string | null
+          id?: string
+          industry?: string
+          membership_type?: string
+          mobile_number?: string
+          participate_in_events?: boolean
+          reason_to_join?: string
+          role_designation?: string
+          understands_curation?: boolean
+          website_or_linkedin?: string | null
+          years_in_business?: number
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
